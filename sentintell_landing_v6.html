@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sentintell — From forecast to decision</title>
+<meta name="description" content="Sentintell turns a probabilistic weather forecast into one clear economic decision — ACT or DO NOT ACT — with the dollar value attached. Decision intelligence for operational weather risk in agriculture, energy, and industry.">
+<meta name="author" content="Sentintell / AgriMetra Ltd.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://sentintell.com/">
+<meta name="theme-color" content="#0a1b35">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sentintell.com/">
+<meta property="og:site_name" content="Sentintell">
+<meta property="og:title" content="Sentintell — From forecast to decision">
+<meta property="og:description" content="One clear economic call — ACT or DO NOT ACT — with the dollar value, and the evidence behind it.">
+<meta property="og:image" content="https://sentintell.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sentintell — From forecast to decision">
+<meta name="twitter:description" content="One clear economic call — ACT or DO NOT ACT — with the dollar value, and the evidence behind it.">
+<meta name="twitter:image" content="https://sentintell.com/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a1b35'/><circle cx='38' cy='52' r='9' fill='%232b3fa0'/><circle cx='66' cy='52' r='9' fill='%2300e0f0'/><rect x='38' y='49' width='28' height='5' fill='%232b3fa0'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1b35;--bg-2:#081530;--surface:#0f2449;--surface-2:#143057;
+  --line:rgba(150,190,235,0.12);--line-2:rgba(150,190,235,0.22);
+  --ink:#eef4fc;--muted:#a7bcd9;--faint:#8499b8;
+  --cyan:#00e0f0;--cyan-dim:#1fb9c8;--navy:#3f63c4;--on-cyan:#062338;
+  --brand:#1ac6e4;--logo-dot:#2b3fa0;
+  --sans:'Hanken Grotesk',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:88px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.55;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 75% 12%,#000 22%,transparent 72%)}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.uc-tab:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+.wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:12px}
+.s-title{font-weight:800;font-size:clamp(30px,4.4vw,46px);line-height:1.04;letter-spacing:-1.4px;color:#f4f9ff}
+.s-sub{font-size:17.5px;color:var(--muted);line-height:1.62;max-width:600px}
+.btn{font-family:var(--sans);font-weight:500;font-size:15px;padding:14px 26px;border-radius:8px;cursor:pointer;border:none;transition:transform .18s,border-color .18s;display:inline-flex;align-items:center;gap:9px;text-decoration:none}
+.btn-pri{background:var(--cyan);color:var(--on-cyan);font-weight:600}
+.btn-pri:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.btn-ghost:hover{border-color:var(--cyan)}
+.btn-wa{background:#1f8a5b;color:#fff;font-weight:600}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn .arr{font-family:var(--mono)}
+.dots{flex-shrink:0}
+
+/* BRAND WORDMARK (vector — replaces 88KB base64 PNG) */
+.brand{font-family:'Fredoka',var(--sans);font-weight:600;font-size:26px;letter-spacing:-0.4px;color:var(--brand);display:inline-flex;align-items:center;line-height:1;white-space:nowrap}
+.brand .brand-dot{width:7px;height:7px;border-radius:50%;background:var(--logo-dot);margin:0 3px;align-self:center;transform:translateY(-1px)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,27,53,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .3s}
+.nav-in{max-width:1200px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+.nav-r{display:flex;align-items:center;gap:30px}
+.nav-r a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.3px;transition:color .18s}
+.nav-r a:hover{color:var(--cyan)}
+.nav-cta{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--on-cyan) !important;background:var(--cyan);padding:9px 18px;border-radius:6px;transition:transform .18s}
+.nav-cta:hover{transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--muted);border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(10,27,53,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 40px 22px;flex-direction:column;gap:2px;z-index:998}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:16px;color:var(--muted);padding:12px 0;border-bottom:1px solid var(--line)}
+.mobile-menu-actions{display:flex;gap:10px;margin-top:14px}
+.mobile-menu-actions a{flex:1;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:600}
+
+/* HERO */
+.hero{padding:148px 0 70px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:58px;align-items:center}
+.h-eyebrow{margin-bottom:28px}
+.h1{font-weight:800;font-size:clamp(48px,7vw,84px);line-height:0.9;letter-spacing:-2.6px;color:#f4f9ff;margin-bottom:24px}
+.h1 .sub{display:block;color:var(--muted);font-weight:500;font-size:clamp(19px,2.2vw,25px);letter-spacing:-0.5px;line-height:1.18;margin-top:22px;max-width:440px}
+.lede{font-size:18px;color:#c2d3e8;line-height:1.6;max-width:430px;margin-bottom:34px}
+.lede b{color:var(--ink);font-weight:500}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.tile-lab{font-family:var(--mono);font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.verdict{grid-column:span 2;background:var(--surface-2);border-color:var(--line-2);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:26px}
+.v-word{font-weight:800;font-size:72px;line-height:0.84;letter-spacing:-2px;color:var(--cyan)}
+.v-evt{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+.v-evt b{color:var(--ink);font-weight:500}
+.v-right{text-align:right;flex-shrink:0}
+.v-elab{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.v-ev{font-family:var(--mono);font-weight:600;font-size:30px;color:#f4f9ff;letter-spacing:-0.5px}
+.stat .s-val{font-family:var(--mono);font-weight:600;font-size:26px;color:#f4f9ff;letter-spacing:-0.5px}
+.stat .s-val .u{color:var(--faint);font-size:14px;font-weight:400}
+.stat .s-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:7px}
+.ens{grid-column:span 2;padding:20px 22px}
+.ens-bars{display:flex;align-items:flex-end;gap:3px;height:42px;margin-top:4px}
+.ens-bars .b{flex:1;border-radius:2px 2px 0 0;background:#2a3f63}
+.ens-bars .b.hit{background:var(--cyan)}
+.ens-foot{display:flex;justify-content:space-between;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--faint)}
+.runline{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:0.4px;margin-top:16px;text-align:right}
+.live{animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* Entrance animations only when motion is welcome; content stays visible otherwise */
+@media (prefers-reduced-motion:no-preference){
+  .h-eyebrow{opacity:0;animation:rise .7s .05s forwards}
+  .h1{opacity:0;animation:rise .7s .12s forwards}
+  .lede{opacity:0;animation:rise .7s .2s forwards}
+  .cta-row{opacity:0;animation:rise .7s .28s forwards}
+  .bento{opacity:0;animation:rise .9s .36s forwards}
+}
+@media (prefers-reduced-motion:reduce){
+  .live,.cb-typing span{animation:none}
+}
+
+/* STRIP */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.strip-in{max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;gap:12px 34px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--faint);letter-spacing:0.4px;align-items:center}
+.strip-in .lead{color:var(--muted);font-family:var(--sans);font-size:13px}
+.strip-in .it{display:flex;align-items:center;gap:8px}
+.strip-in .it::before{content:"◆";color:var(--cyan-dim);font-size:8px}
+
+/* SECTION */
+.sec{padding:92px 0}
+.sec-head{margin-bottom:54px;max-width:680px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head .eyebrow{margin-bottom:18px}
+.sec-head .s-title{margin-bottom:16px}
+
+/* HOW — connected flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+.flow::before{content:"";position:absolute;top:7px;left:6%;right:6%;height:1.5px;background:linear-gradient(90deg,transparent,var(--navy),var(--cyan),transparent)}
+.flow-step{position:relative;padding-top:30px}
+.flow-step .node{position:absolute;top:0;left:0;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--navy)}
+.flow-step:last-child .node{border-color:var(--cyan);background:var(--cyan)}
+.flow-step .idx{font-family:var(--mono);font-size:11px;color:var(--cyan-dim);letter-spacing:1px;margin-bottom:8px}
+.flow-step h4{font-size:16.5px;font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-0.2px}
+.flow-step p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+/* VALUE — bento */
+.vbento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:16px}
+.vcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;transition:border-color .22s,transform .22s}
+.vcard:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.vcard .vc-ic{font-family:var(--mono);font-size:11px;color:var(--cyan-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.vcard h3{font-size:19px;font-weight:500;color:var(--ink);margin-bottom:9px;letter-spacing:-0.3px}
+.vcard p{font-size:14px;color:var(--muted);line-height:1.6}
+.vcard.feat{grid-column:span 2;background:var(--surface-2);border-color:var(--line-2);display:flex;flex-direction:column;justify-content:center}
+.vcard.feat h3{font-size:24px;letter-spacing:-0.6px;margin-bottom:12px}
+.vcard.feat p{font-size:15.5px;max-width:440px}
+
+/* USE CASES */
+.uc-tabs{display:flex;gap:8px;margin-bottom:36px;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:6px;flex-wrap:wrap}
+.uc-tab{flex:1;min-width:150px;padding:12px;text-align:center;font-size:13.5px;font-weight:500;color:var(--faint);border:1px solid transparent;border-radius:8px;cursor:pointer;transition:all .2s;font-family:var(--sans);background:transparent}
+.uc-tab.active{background:var(--surface);color:var(--ink);border-color:var(--line-2)}
+.uc-panel{display:none;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.uc-panel.active{display:grid}
+.uc-badge{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--cyan-dim);margin-bottom:16px;display:block}
+.uc-panel h3{font-size:25px;font-weight:500;line-height:1.25;margin-bottom:15px;letter-spacing:-0.5px;color:#f4f9ff}
+.uc-copy>p{font-size:15px;color:var(--muted);line-height:1.62;margin-bottom:20px}
+.uc-bullets{list-style:none;display:flex;flex-direction:column;gap:11px}
+.uc-bullets li{font-size:14px;color:var(--muted);padding-left:22px;position:relative;line-height:1.5}
+.uc-bullets li::before{content:"\2192";position:absolute;left:0;color:var(--cyan)}
+.uc-visual{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.uc-scn{background:var(--bg-2);border-radius:9px;padding:13px 16px;margin-bottom:10px}
+.uc-scn .l{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px}
+.uc-scn .v{font-size:14px;font-weight:500;color:#cdd9ea;font-family:var(--mono)}
+.uc-res{display:flex;align-items:center;justify-content:space-between;background:rgba(0,224,240,0.07);border:1px solid rgba(0,224,240,0.22);border-radius:9px;padding:15px 16px}
+.uc-res .l{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px}
+.uc-res .v{font-family:var(--mono);font-size:19px;font-weight:600;color:var(--cyan)}
+
+/* SCIENCE */
+.sci-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.sci-points{list-style:none;display:flex;flex-direction:column;gap:20px}
+.sci-points li{font-size:15px;color:var(--muted);line-height:1.6;padding-left:28px;position:relative}
+.sci-points li::before{content:"\25C6";position:absolute;left:0;top:2px;color:var(--cyan);font-size:10px}
+.sci-points b{color:var(--ink);font-weight:500}
+.sci-card{background:var(--surface);border:1px solid var(--line-2);border-radius:16px;padding:30px}
+.sci-card h4{font-size:20px;font-weight:500;margin-bottom:6px;color:#f4f9ff}
+.sci-card .role{font-family:var(--mono);font-size:11px;color:var(--cyan-dim);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:16px}
+.sci-card p{font-size:14px;color:var(--muted);line-height:1.62}
+
+/* PARTNER */
+.partner{background:var(--bg-2);border:1px solid var(--line-2);border-radius:20px;padding:50px}
+.partner-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center}
+.p-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:6px}
+.p-list li{font-size:14.5px;color:var(--muted);padding-left:26px;position:relative;line-height:1.5}
+.p-list li::before{content:"\2713";position:absolute;left:0;color:var(--cyan);font-weight:700}
+.honesty{font-size:18px;line-height:1.55;color:var(--ink);font-weight:500}
+.honesty span{color:var(--cyan)}
+
+/* CONTACT */
+.cta-box{background:var(--bg-2);border:1px solid var(--line-2);border-radius:20px;padding:50px}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.cta-left .s-title{font-size:30px;margin:14px 0}
+.cta-btns{display:flex;flex-direction:column;gap:12px;margin:22px 0;max-width:330px}
+.cta-btns .btn{justify-content:center}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+.form h3{font-size:19px;font-weight:500;margin-bottom:6px;color:#f4f9ff}
+.form>p{font-size:13.5px;color:var(--faint);margin-bottom:20px}
+.form>p a{color:var(--cyan)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ffield{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.ffield label{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:0.8px}
+.ffield input,.ffield select,.ffield textarea{background:var(--bg-2);border:1px solid var(--line);border-radius:9px;padding:11px 14px;color:var(--ink);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;width:100%}
+.ffield input:focus,.ffield select:focus,.ffield textarea:focus{border-color:var(--cyan)}
+.ffield input::placeholder,.ffield textarea::placeholder{color:var(--faint)}
+.ffield select option{background:var(--surface);color:var(--ink)}
+.ffield textarea{resize:vertical;min-height:80px}
+.fsubmit{width:100%;padding:14px;border-radius:9px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;border:none;background:var(--cyan);color:var(--on-cyan);transition:transform .2s;margin-top:4px}
+.fsubmit:hover{transform:translateY(-1px)}
+.fsuccess{display:none;text-align:center;padding:24px;color:var(--cyan)}
+
+/* FOOTER */
+footer{background:var(--bg-2);border-top:1px solid var(--line);padding:50px 0 32px;position:relative;z-index:2}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:42px}
+.foot-brand .brand{font-size:23px;margin-bottom:14px}
+.foot-brand p{font-size:13.5px;color:var(--faint);line-height:1.6;max-width:250px}
+.foot-col h5{font-family:var(--mono);font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col ul li a{font-size:13.5px;color:var(--faint);transition:color .2s}
+.foot-col ul li a:hover{color:var(--cyan)}
+.foot-social{display:flex;gap:10px;margin-top:16px}
+.foot-social a{width:34px;height:34px;border-radius:9px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.foot-social a:hover{border-color:var(--cyan);color:var(--cyan)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12px;color:var(--faint)}
+
+/* CHATBOT + WA */
+.wa-float{position:fixed;bottom:26px;right:92px;z-index:900;width:54px;height:54px;border-radius:50%;background:#1f8a5b;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,0.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:27px;height:27px;fill:#fff}
+.cb-float{position:fixed;bottom:26px;right:26px;z-index:900}
+.cb-toggle{width:54px;height:54px;border-radius:50%;background:var(--cyan);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,0.4);transition:transform .2s}
+.cb-toggle:hover{transform:scale(1.08)}
+.cb-toggle svg{width:25px;height:25px;fill:var(--on-cyan)}
+.cb-window{position:fixed;bottom:90px;right:18px;width:366px;background:var(--surface);border:1px solid var(--line-2);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.55);overflow:hidden;display:none;flex-direction:column;max-height:540px;z-index:901}
+.cb-window.open{display:flex}
+.cb-head{background:var(--surface-2);padding:15px 18px;display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--line)}
+.cb-av{width:34px;height:34px;border-radius:50%;background:rgba(0,224,240,0.14);border:1.5px solid rgba(0,224,240,0.3);display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:15px}
+.cb-head h4{font-size:14px;font-weight:500;color:var(--ink)}
+.cb-head p{font-size:11px;color:var(--cyan);display:flex;align-items:center;gap:5px}
+.cb-head p::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.cb-x{margin-left:auto;background:none;border:none;color:var(--faint);font-size:19px;cursor:pointer}
+.cb-msgs{flex:1;overflow-y:auto;padding:15px;display:flex;flex-direction:column;gap:10px;min-height:270px}
+.msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:13px;line-height:1.5}
+.msg-bot{background:var(--bg-2);color:#cdd9ea;border-bottom-left-radius:4px;align-self:flex-start}
+.msg-user{background:rgba(0,224,240,0.16);color:var(--ink);border-bottom-right-radius:4px;align-self:flex-end;border:1px solid rgba(0,224,240,0.25)}
+.cb-typing{gap:4px;padding:10px 13px;background:var(--bg-2);border-radius:12px;align-self:flex-start;display:none}
+.cb-typing span{width:6px;height:6px;border-radius:50%;background:var(--faint);animation:typing 1.2s infinite}
+.cb-typing span:nth-child(2){animation-delay:.2s}.cb-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,80%,100%{opacity:.3}40%{opacity:1}}
+.cb-sugs{padding:8px 15px 4px;display:flex;gap:6px;flex-wrap:wrap}
+.cb-sug{background:rgba(0,224,240,0.07);border:1px solid rgba(0,224,240,0.18);border-radius:14px;padding:6px 12px;font-size:11.5px;color:var(--cyan);cursor:pointer}
+.cb-sug:hover{background:rgba(0,224,240,0.14)}
+.cb-inp-row{padding:11px 15px;border-top:1px solid var(--line);display:flex;gap:8px}
+.cb-inp{flex:1;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;padding:10px 13px;color:var(--ink);font-family:var(--sans);font-size:13px;outline:none}
+.cb-inp:focus{border-color:var(--cyan)}
+.cb-send{background:var(--cyan);border:none;border-radius:9px;width:37px;height:37px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.cb-send svg{width:15px;height:15px;fill:var(--on-cyan)}
+
+@media(max-width:980px){
+  .hero-grid,.uc-panel.active,.sci-grid,.partner-grid,.cta-grid{grid-template-columns:1fr;gap:36px}
+  .hero{padding:128px 0 60px}
+  .flow{grid-template-columns:1fr 1fr;gap:30px}.flow::before{display:none}
+  .vbento{grid-template-columns:1fr 1fr}.vcard.feat{grid-column:span 2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .partner,.cta-box{padding:34px}
+}
+@media(max-width:560px){
+  .wrap,.nav-in,.strip-in,.foot-grid{padding-left:22px;padding-right:22px}
+  .nav-r{display:none}.hamburger{display:flex}
+  .vbento{grid-template-columns:1fr}.vcard.feat{grid-column:span 1}
+  .flow{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .verdict{flex-direction:column;align-items:flex-start}.v-right{text-align:left}
+  .cta-row,.cta-btns,.frow{grid-template-columns:1fr}.cta-row{flex-direction:column}
+  .cb-window{width:calc(100vw - 36px);right:0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#" aria-label="Sentintell — home">Sent<span class="brand-dot"></span>intell</a>
+    <div class="nav-r">
+      <a href="#how">How it works</a>
+      <a href="#why">The method</a>
+      <a href="#who">Who it's for</a>
+      <a href="#science">Science</a>
+      <a href="https://weather-it-is.com/eco-value/dashboard.php" target="_blank" rel="noopener">Log in</a>
+      <a href="#contact" class="nav-cta">Book a session</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#how" onclick="toggleMenu()">How it works</a>
+  <a href="#why" onclick="toggleMenu()">The method</a>
+  <a href="#who" onclick="toggleMenu()">Who it's for</a>
+  <a href="#science" onclick="toggleMenu()">Science</a>
+  <div class="mobile-menu-actions">
+    <a href="https://weather-it-is.com/eco-value/dashboard.php" class="btn btn-ghost" target="_blank" rel="noopener">Log in</a>
+    <a href="#contact" class="nav-cta" onclick="toggleMenu()">Book a session</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow h-eyebrow">
+          <svg class="dots" width="34" height="12" viewBox="0 0 34 12" fill="none" aria-hidden="true"><line x1="6" y1="6" x2="28" y2="6" stroke="#3f63c4" stroke-width="1.5"/><circle cx="6" cy="6" r="4" fill="#3f63c4"/><circle cx="28" cy="6" r="4" fill="#00e0f0"/></svg>
+          Weather-driven decision intelligence
+        </div>
+        <h1 class="h1">Act,<br>or hold?<span class="sub">We turn a probabilistic forecast into the answer — with the dollar value behind it.</span></h1>
+        <p class="lede">Sentintell weighs the forecast against <b>your</b> cost of acting and loss of not acting, and returns one call you can defend — backed by the historical record, not a black box.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn btn-pri">See it on your decision <span class="arr">&rarr;</span></a>
+          <a href="#how" class="btn btn-ghost">How it works</a>
+        </div>
+      </div>
+      <div>
+        <div class="bento">
+          <div class="tile verdict">
+            <div>
+              <div class="tile-lab">Recommendation</div>
+              <div class="v-word">ACT</div>
+              <div class="v-evt">Frost &lt; &minus;2&deg;C &middot; <b>Vineyard, Piedmont IT</b><br>forecast day 4 &middot; deploy protection</div>
+            </div>
+            <div class="v-right"><div class="v-elab">Expected value</div><div class="v-ev">+$76,000</div></div>
+          </div>
+          <div class="tile stat"><div class="tile-lab">Calibrated probability</div><div class="s-val">88<span class="u">%</span></div><div class="s-meta">threshold crossed</div></div>
+          <div class="tile stat"><div class="tile-lab">Cost / Loss</div><div class="s-val">8K<span class="u"> / </span>95K</div><div class="s-meta">r = 0.08</div></div>
+          <div class="tile ens"><div class="tile-lab">Ensemble &mdash; members crossing threshold</div><div class="ens-bars" id="bars"></div><div class="ens-foot"><span>gec00 &rarr; gep30</span><span id="hitcount">31 / 31 indicate event</span></div></div>
+        </div>
+        <div class="runline">GEFS 2026-06-01 00Z &middot; isotonic-calibrated &middot; <span class="live" style="color:var(--cyan)">&#9670;</span> live engine output</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip">
+  <div class="strip-in">
+    <span class="lead">Decision science, not black-box AI.</span>
+    <span class="it">Murphy&ndash;Richardson cost&ndash;loss framework</span>
+    <span class="it">NOAA GEFS ensemble</span>
+    <span class="it">Inspectable diagnostics</span>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">How it works</div>
+      <h2 class="s-title">Four steps to a decision you can defend</h2>
+      <p class="s-sub" style="margin:0 auto">You define the economic stakes. Sentintell calculates whether the forecast justifies acting.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><div class="node"></div><div class="idx">01</div><h4>Define the decision</h4><p>Region, variable, threshold, forecast day — plus your cost of acting (C) and loss if you don't (L).</p></div>
+      <div class="flow-step"><div class="node"></div><div class="idx">02</div><h4>Ensemble forecast</h4><p>A 31-member GEFS ensemble computes the calibrated probability your threshold is crossed.</p></div>
+      <div class="flow-step"><div class="node"></div><div class="idx">03</div><h4>Cost–loss analysis</h4><p>The Murphy–Richardson framework weighs that probability against your C/L ratio for expected value.</p></div>
+      <div class="flow-step"><div class="node"></div><div class="idx">04</div><h4>A decision, with evidence</h4><p>One call — ACT or DO NOT ACT — its dollar value, and the historical record that stands behind it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head center"><div class="eyebrow">Why Sentintell</div><h2 class="s-title">The intelligence layer weather data was missing</h2></div>
+    <div class="vbento">
+      <div class="vcard feat"><div class="vc-ic">The core</div><h3>One decision, not a forecast</h3><p>Not a probability or a range — a single actionable call, with the financial reasoning that produced it laid out in full. The forecast is the input; the decision is the product.</p></div>
+      <div class="vcard"><div class="vc-ic">Your economics</div><h3>Priced in your terms</h3><p>You set the cost of acting and the loss of not acting. The threshold adapts to your business, not a generic rule.</p></div>
+      <div class="vcard"><div class="vc-ic">Transparency</div><h3>No black box</h3><p>Every call exposes the probability, the historical reliability at that probability, and the matching past cases.</p></div>
+      <div class="vcard"><div class="vc-ic">Honesty</div><h3>Honest about its limits</h3><p>When a forecast falls outside the historical record, the system says so — instead of dressing up a guess.</p></div>
+      <div class="vcard"><div class="vc-ic">Coverage</div><h3>Any region, any threshold</h3><p>Define a point or draw a polygon; analyse temperature, precipitation or wind at the threshold that matters to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="sec" id="who">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Who it's for</div><h2 class="s-title">Built for the binary decisions that move real money</h2><p class="s-sub">Wherever a weather event forces a yes/no choice — spend to protect, or accept the exposure — and both sides can be put in currency.</p></div>
+    <div class="uc-tabs" role="tablist" aria-label="Who it's for">
+      <button class="uc-tab active" role="tab" id="t-agri" aria-selected="true" aria-controls="tab-agri" onclick="showTab('agri')">Agriculture</button>
+      <button class="uc-tab" role="tab" id="t-energy" aria-selected="false" tabindex="-1" aria-controls="tab-energy" onclick="showTab('energy')">Energy &amp; industry ops</button>
+      <button class="uc-tab" role="tab" id="t-ins" aria-selected="false" tabindex="-1" aria-controls="tab-ins" onclick="showTab('ins')">Risk &amp; insurance</button>
+    </div>
+    <div class="uc-panel active" id="tab-agri" role="tabpanel" aria-labelledby="t-agri">
+      <div class="uc-copy">
+        <span class="uc-badge">High-value agriculture</span>
+        <h3>One frost can erase a season. The decision is whether to defend it.</h3>
+        <p>For vineyards, orchards and other high-value perennial crops, protection is cheap and known; a lost crop is catastrophic. That asymmetry is exactly where a calibrated forecast is worth the most — and what Sentintell quantifies.</p>
+        <ul class="uc-bullets"><li>Frost before bud-break: deploy protection, or hold?</li><li>Heat stress: pre-cool or shade ahead of an extreme</li><li>Harvest window: act on the dry-day signal</li><li>Irrigation timing against forecast conditions</li></ul>
+      </div>
+      <div class="uc-visual">
+        <div class="uc-scn"><div class="l">Scenario</div><div class="v">Frost &lt; −2°C, Piedmont vineyard, day 6</div></div>
+        <div class="uc-scn"><div class="l">Decision</div><div class="v">Deploy overnight frost protection</div></div>
+        <div class="uc-scn"><div class="l">Protection cost (C)</div><div class="v">$8,000</div></div>
+        <div class="uc-scn"><div class="l">Crop exposure (L)</div><div class="v">$95,000</div></div>
+        <div class="uc-res"><div class="l">Recommendation</div><div class="v">ACT — EV +$76K</div></div>
+      </div>
+    </div>
+    <div class="uc-panel" id="tab-energy" role="tabpanel" aria-labelledby="t-energy">
+      <div class="uc-copy">
+        <span class="uc-badge">Energy &amp; industry operations</span>
+        <h3>The operational hedge you should have placed — days before the event.</h3>
+        <p>This is about protecting operations, not speculating on markets. When a low-wind cold spell or demand swing is forecast, Sentintell tells a generator, utility or operator whether the signal justifies hedging exposure or pre-positioning resources — and what the call is worth.</p>
+        <ul class="uc-bullets"><li>Production hedging: cover a forecast shortfall, or hold</li><li>Grid stress: pre-position crews ahead of ice or wind</li><li>Cold-snap demand: secure supply before threshold</li><li>Asset protection: harden facilities ahead of extremes</li></ul>
+      </div>
+      <div class="uc-visual">
+        <div class="uc-scn"><div class="l">Scenario</div><div class="v">NW Germany wind &lt; 5 m/s, 3+ days, day 5</div></div>
+        <div class="uc-scn"><div class="l">Decision</div><div class="v">Hedge forecast production shortfall</div></div>
+        <div class="uc-scn"><div class="l">Cost of hedging (C)</div><div class="v">€18,000</div></div>
+        <div class="uc-scn"><div class="l">Exposure if unhedged (L)</div><div class="v">€140,000</div></div>
+        <div class="uc-res"><div class="l">Recommendation</div><div class="v">ACT — EV +€112K</div></div>
+      </div>
+    </div>
+    <div class="uc-panel" id="tab-ins" role="tabpanel" aria-labelledby="t-ins">
+      <div class="uc-copy">
+        <span class="uc-badge">Risk &amp; insurance</span>
+        <h3>Put a defensible number on weather exposure — before the loss.</h3>
+        <p>Insurers and risk teams already think in cost-and-loss terms. Sentintell expresses weather risk the same way: the probability of a threshold event, its calibrated reliability, and the value of acting — for advisory, mitigation and parametric design.</p>
+        <ul class="uc-bullets"><li>Parametric triggers grounded in calibrated probability</li><li>Portfolio exposure: which assets, and when</li><li>Loss-mitigation advisory that reduces claims at source</li><li>Independent, inspectable evidence on every call</li></ul>
+      </div>
+      <div class="uc-visual">
+        <div class="uc-scn"><div class="l">Scenario</div><div class="v">Frost risk, insured orchard region, day 7</div></div>
+        <div class="uc-scn"><div class="l">Decision</div><div class="v">Trigger mitigation advisory</div></div>
+        <div class="uc-scn"><div class="l">Mitigation cost (C)</div><div class="v">$12,000</div></div>
+        <div class="uc-scn"><div class="l">Avoided claims (L)</div><div class="v">$160,000</div></div>
+        <div class="uc-res"><div class="l">Recommendation</div><div class="v">ACT — EV +$128K</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section class="sec" id="science" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head center"><div class="eyebrow">The science</div><h2 class="s-title">A method with a name — and scientists behind it</h2></div>
+    <div class="sci-grid">
+      <ul class="sci-points">
+        <li><b>Established decision theory.</b> The Murphy–Richardson cost–loss framework has been used for decades to decide when a forecast justifies protective action. Sentintell automates it for your exact numbers.</li>
+        <li><b>Calibrated ensemble probabilities.</b> Raw GEFS output is post-processed with isotonic calibration, so a stated 80% means 80% in the historical record — not a model artefact.</li>
+        <li><b>Verification you can inspect.</b> Reliability tables, historical analogs and threshold-continuity checks ship with every result — and the engine flags when a case sits outside what history supports.</li>
+      </ul>
+      <div class="sci-card">
+        <h4>Dr. Barry Lynn</h4>
+        <div class="role">Atmospheric scientist · Technical lead</div>
+        <p>A PhD atmospheric scientist and university researcher in ensemble weather forecasting, Barry is the technical lead behind the Sentintell engine. The methodology is built on peer-reviewed forecast-verification science — the discipline that evaluates whether a forecast is genuinely skilful — applied to whether it's economically worth acting on.</p>
+        <p style="margin-top:14px;color:var(--faint)">Sentintell is a product of AgriMetra Ltd. (Israel).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="sec" id="partners">
+  <div class="wrap">
+    <div class="partner">
+      <div class="partner-grid">
+        <div>
+          <div class="eyebrow" style="margin-bottom:16px">Design partner program</div>
+          <h2 class="s-title" style="margin-bottom:16px">We're working with a small group of design partners</h2>
+          <p class="s-sub" style="margin-bottom:22px">Sentintell is early by design. Rather than sell a self-serve plan, we partner directly with a handful of operators — modelling decisions on their real cost and loss numbers, proving the value, then shaping pricing around what works.</p>
+          <ul class="p-list">
+            <li>Direct access to the decision engine and the team behind it</li>
+            <li>Decisions modelled on your real economics, in your region</li>
+            <li>The full diagnostic record behind every recommendation</li>
+            <li>Direct influence on what we build next</li>
+          </ul>
+          <a href="#contact" class="btn btn-pri" style="margin-top:28px">Apply to be a design partner <span class="arr">&rarr;</span></a>
+        </div>
+        <div><p class="honesty">No fake metrics. No customer logos we haven't earned. Just the method, working on <span>your</span> numbers — and an honest account of what it can and can't do yet.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-grid">
+        <div class="cta-left">
+          <div class="eyebrow">Get started</div>
+          <h2 class="s-title">See it run on a decision that matters to you</h2>
+          <p class="s-sub">Bring a real weather-driven decision. In a short working session we'll model it live — region, threshold, your cost and loss — and show you the call with its evidence.</p>
+          <div class="cta-btns">
+            <a href="https://calendly.com/mottioren/sentintell-20-minute-demo" class="btn btn-pri" target="_blank" rel="noopener">Book a 20-minute session</a>
+            <a href="https://wa.me/972547231170?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Sentintell" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
+          </div>
+          <p style="font-size:13px;color:var(--faint)">Already a partner? <a href="https://weather-it-is.com/eco-value/dashboard.php" style="color:var(--cyan)" target="_blank" rel="noopener">Log in &rarr;</a></p>
+        </div>
+        <div class="form" id="demoForm">
+          <h3>Request a working session</h3>
+          <p>We'll reply within one business day. <a href="https://calendly.com/mottioren/sentintell-20-minute-demo" target="_blank" rel="noopener">Prefer to book directly? &rarr;</a></p>
+          <form id="contactForm" onsubmit="submitForm(event)" action="https://formspree.io/f/mgobendg" method="POST">
+            <div class="frow">
+              <div class="ffield"><label for="f-first">First name</label><input id="f-first" type="text" name="first_name" autocomplete="given-name" placeholder="Alex" required></div>
+              <div class="ffield"><label for="f-last">Last name</label><input id="f-last" type="text" name="last_name" autocomplete="family-name" placeholder="Rossi" required></div>
+            </div>
+            <div class="ffield"><label for="f-email">Work email</label><input id="f-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required></div>
+            <div class="ffield"><label for="f-company">Company</label><input id="f-company" type="text" name="company" autocomplete="organization" placeholder="Company name"></div>
+            <div class="ffield"><label for="f-sector">Sector</label><select id="f-sector" name="sector"><option value="" disabled selected>Select your sector</option><option>Agriculture</option><option>Energy &amp; industry</option><option>Insurance &amp; risk</option><option>Other</option></select></div>
+            <div class="ffield"><label for="f-msg">The decision you'd like to model</label><textarea id="f-msg" name="message" placeholder="e.g. whether to deploy frost protection over our vineyards..."></textarea></div>
+            <button type="submit" class="fsubmit">Send request &rarr;</button>
+          </form>
+          <div class="fsuccess" id="formSuccess"><p style="font-size:17px;font-weight:500;color:var(--ink);margin-bottom:6px">Request sent</p><p style="font-size:14px;color:var(--faint)">We'll be in touch within one business day.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#" aria-label="Sentintell — home">Sent<span class="brand-dot"></span>intell</a>
+        <p>Weather-driven decision intelligence — one clear economic call, with the evidence behind it.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--faint)">A product of AgriMetra Ltd.</p>
+        <div class="foot-social">
+          <a href="https://www.linkedin.com/company/sentintell" target="_blank" rel="noopener" title="LinkedIn" aria-label="Sentintell on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://wa.me/972547231170" target="_blank" rel="noopener" title="WhatsApp" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Product</h5><ul><li><a href="#how">How it works</a></li><li><a href="#why">The method</a></li><li><a href="#science">The science</a></li><li><a href="https://weather-it-is.com/eco-value/dashboard.php" target="_blank" rel="noopener">Log in</a></li></ul></div>
+      <div class="foot-col"><h5>Who it's for</h5><ul><li><a href="#who">Agriculture</a></li><li><a href="#who">Energy &amp; industry</a></li><li><a href="#who">Risk &amp; insurance</a></li><li><a href="#partners">Design partners</a></li></ul></div>
+      <div class="foot-col"><h5>Company</h5><ul><li><a href="#contact">Contact</a></li><li><a href="https://wa.me/972547231170" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/sentintell" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="#contact">Privacy &amp; data</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><p>&copy; 2026 AgriMetra Ltd. / Sentintell. All rights reserved.</p><p>weather-it-is.com</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/972547231170?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Sentintell" class="wa-float" target="_blank" rel="noopener" title="WhatsApp" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<div class="cb-float">
+  <div class="cb-window" id="cbWindow" role="dialog" aria-label="Sentintell assistant">
+    <div class="cb-head"><div class="cb-av" aria-hidden="true">&#9670;</div><div><h4>Sentintell Assistant</h4><p>Online — ask me anything</p></div><button class="cb-x" onclick="toggleChat()" aria-label="Close chat">&#10005;</button></div>
+    <div class="cb-msgs" id="cbMsgs"><div class="msg msg-bot">Hi! I can explain how Sentintell turns a forecast into a decision, what it's good for, the science behind it, or how to work with us. What would you like to know?</div></div>
+    <div class="cb-typing" id="cbTyping"><span></span><span></span><span></span></div>
+    <div class="cb-sugs" id="cbSugs"><button class="cb-sug" onclick="sendSug(this)">How does it work?</button><button class="cb-sug" onclick="sendSug(this)">What does ACT mean?</button><button class="cb-sug" onclick="sendSug(this)">Who is it for?</button><button class="cb-sug" onclick="sendSug(this)">How do I work with you?</button></div>
+    <div class="cb-inp-row"><input class="cb-inp" id="cbInp" placeholder="Ask a question..." aria-label="Ask a question" onkeydown="if(event.key==='Enter')sendMsg()"><button class="cb-send" onclick="sendMsg()" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div>
+  </div>
+  <button class="cb-toggle" onclick="toggleChat()" title="Chat" aria-label="Open chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></button>
+</div>
+
+<script>
+var KB=[
+  {k:['how','work','does it','what is it','explain','overview'],a:'Sentintell combines a 31-member GEFS weather ensemble with the Murphy–Richardson cost–loss framework to produce one clear economic decision: ACT or DO NOT ACT, plus the expected dollar value. You give it a region, a variable and threshold, a forecast day, and your cost of acting (C) versus your loss if you do not (L). It returns whether the forecast justifies acting — and shows the evidence behind that call.'},
+  {k:['act','recommendation','signal','output','decision','do not'],a:'ACT means the calibrated probability of your threshold being crossed is high enough, relative to your cost/loss ratio, that acting has positive expected value. DO NOT ACT means the signal is not strong enough to justify the cost. Every call comes with the expected value and the historical record that supports it.'},
+  {k:['black box','transparent','evidence','diagnostic','trust','reliability'],a:'No black box. Every recommendation exposes the forecast probability, the historical reliability at that probability, the matching past cases, and a threshold-continuity check. If a case sits outside what history can support, the system says so rather than guessing.'},
+  {k:['honest','limit','outside','uncertain','confidence'],a:'Sentintell is built to be honest about its limits. When a forecast falls outside the historical archive, it distinguishes that from a forecast that historically failed — so you know the difference between "this rarely works" and "we have never seen this before."'},
+  {k:['gefs','ensemble','forecast','model','weather','calibrat','isotonic'],a:'We use the Global Ensemble Forecast System (GEFS) with 31 members — a probability distribution, not a single forecast. Raw probabilities are calibrated with isotonic post-processing so a stated probability matches historical observed frequency. Horizon: 1 to 14 days.'},
+  {k:['murphy','richardson','cost-loss','cost loss','framework','science','method'],a:'The Murphy–Richardson cost–loss framework is established decision theory from forecast economics. When forecast probability exceeds your C/L ratio, acting has positive expected value. Sentintell automates this for any scenario, using calibrated ensemble probabilities.'},
+  {k:['who','target','customer','user','sector','audience'],a:'Sentintell is for anyone facing a binary, weather-driven decision where acting costs money and not acting risks a larger loss: high-value agriculture (frost and heat protection), energy and industrial operations (hedging, crew pre-positioning, asset protection), and risk and insurance teams. Built for operational decisions, not speculative trading.'},
+  {k:['agri','agriculture','farm','crop','frost','harvest','vineyard','orchard'],a:'For high-value agriculture — vineyards, orchards, perennial crops — Sentintell answers: a frost is forecast in 6 days, deploy protection or hold? Protection is cheap and known; a lost crop is large. That asymmetry is where a calibrated forecast is worth the most.'},
+  {k:['energy','power','grid','industrial','hedge','operations','utility','renewable'],a:'For energy and industrial operations, Sentintell supports operational hedging and protection — not speculation. Hedging a forecast shortfall before delivery, pre-positioning crews ahead of ice or wind, hardening assets before extremes. You set the action cost and exposure; it tells you whether the forecast justifies acting.'},
+  {k:['insurance','risk','parametric','claims','insurer'],a:'For insurance and risk teams, Sentintell expresses weather exposure in cost-and-loss terms: calibrated probability, historical reliability, and the value of acting — supporting parametric trigger design, portfolio exposure, and loss-mitigation advisory.'},
+  {k:['price','pricing','cost','plan','subscription','tier','partner','trial'],a:'We are early by design and not yet selling a self-serve plan. We work with a small group of design partners — modelling decisions on their real numbers, proving value, then shaping pricing around what works. Use the contact form or book a session to apply.'},
+  {k:['company','about','team','sentintell','agrimetra','barry','lynn'],a:'Sentintell is a product of AgriMetra Ltd. (Israel). The technical lead is Dr. Barry Lynn, a PhD atmospheric scientist and researcher in ensemble forecasting. The methodology is built on peer-reviewed forecast-verification science applied to economic decision-making.'},
+  {k:['contact','reach','email','speak','demo','session','book'],a:'Best next step is a short working session: bring a real weather-driven decision and we will model it live — region, threshold, your cost and loss — and show you the call with its evidence. Use the contact form, WhatsApp, or book via the link at the top.'},
+  {k:['login','log in','access','account','platform','dashboard'],a:'The working engine lives at weather-it-is.com/eco-value/dashboard.php. Access is currently for design partners — use Log in at the top if you have an account, or request a session to get started.'}
+];
+function botReply(q){var ql=q.toLowerCase();for(var i=0;i<KB.length;i++){for(var j=0;j<KB[i].k.length;j++){if(ql.indexOf(KB[i].k[j])>-1)return KB[i].a;}}return "Good question — the team can give you a precise answer. Use WhatsApp or book a working session. You can also ask about: how it works, what ACT means, who it's for, the science, or our design-partner program.";}
+function toggleChat(){var w=document.getElementById('cbWindow');var open=w.classList.toggle('open');if(open)document.getElementById('cbInp').focus();}
+function addMsg(t,w){var m=document.getElementById('cbMsgs');var d=document.createElement('div');d.className='msg msg-'+w;d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+function sendMsg(){var i=document.getElementById('cbInp');var q=i.value.trim();if(!q)return;i.value='';addMsg(q,'user');var typing=document.getElementById('cbTyping');var delay=reduceMotion?0:520;if(!reduceMotion){typing.style.display='flex';var m=document.getElementById('cbMsgs');m.scrollTop=m.scrollHeight;}setTimeout(function(){typing.style.display='none';addMsg(botReply(q),'bot');},delay);}
+function sendSug(e){document.getElementById('cbInp').value=e.textContent;sendMsg();}
+function showTab(id){var order=['agri','energy','ins'];var ids=['t-agri','t-energy','t-ins'];document.querySelectorAll('.uc-tab').forEach(function(t,n){var on=ids[n]==='t-'+id;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});document.querySelectorAll('.uc-panel').forEach(function(p){p.classList.remove('active')});var p=document.getElementById('tab-'+id);if(p)p.classList.add('active');}
+function submitForm(e){e.preventDefault();var f=document.getElementById('contactForm');fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){f.style.display='none';document.getElementById('formSuccess').style.display='block';}else{alert('Something went wrong. Please try WhatsApp or email instead.');}}).catch(function(){alert('Network error. Please try WhatsApp or email.');});}
+function toggleMenu(){var b=document.getElementById('hamburger');var m=document.getElementById('mobileMenu');var o=m.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';}
+window.addEventListener('scroll',function(){document.querySelector('nav').style.background=window.scrollY>40?'rgba(10,27,53,0.95)':'rgba(10,27,53,0.82)';});
+(function(){var seed=[35,33,31,34,29,31,32,34,30,35,33,32,32,33,34,33,30,35,33,31,33,34,31,33,32,33,29,32,34,33,32];var thr=27,lo=27,hi=36,host=document.getElementById('bars'),hits=0;seed.forEach(function(v){var b=document.createElement('div');b.className='b'+(v>=thr?' hit':'');if(v>=thr)hits++;b.style.height=Math.round(((v-lo)/(hi-lo))*100)+'%';host.appendChild(b);});document.getElementById('hitcount').textContent=hits+' / 31 indicate event';})();
+</script>
+</body>
+</html>
