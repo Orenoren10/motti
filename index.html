@@ -7,7 +7,7 @@
 <meta name="description" content="QMark של נרי ייעוץ ואימון — שיטת מדידה בינלאומית פורצת דרך למדידת 49 איכויות, אבחון מדויק של שביעות הרצון בתחומי החיים, ותוכנית פעולה לשיפור. פגישת אבחון ראשונה ללא עלות.">
 <meta name="author" content="NRI Consulting / נרי ייעוץ ואימון">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#22a64a">
+<meta name="theme-color" content="#35c96a">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -16,13 +16,13 @@
 <meta property="og:title" content="QMark — השינוי מתחיל מבפנים">
 <meta property="og:description" content="פגישת אבחון QMark ללא עלות — תמונת מצב מדויקת של שביעות הרצון שלך, ותוכנית פעולה לשיפור.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='none' stroke='%2322a64a' stroke-width='8'/><path d='M50 50 L50 4 A46 46 0 0 1 96 50 Z' fill='%2322a64a'/><path d='M50 50 L50 96 A46 46 0 0 1 4 50 Z' fill='%2322a64a'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M92,10L92,84Q92,92,84,92L10,92A82,82,0,0,1,92,10Z' fill='%2335c96a'/><path d='M108,10L108,84Q108,92,116,92L190,92A82,82,0,0,0,108,10Z' fill='%2335c96a'/><path d='M92,190L92,116Q92,108,84,108L10,108A82,82,0,0,0,92,190Z' fill='%2335c96a'/><path d='M100,190A90,90,0,0,1,190,100Q116,116,100,190Z' fill='%2335c96a'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#22a64a; --green-d:#1c8a3e; --green-dd:#15662f; --green-l:#eafaef; --green-l2:#d6f3e0;
+  --green:#35c96a; --green-d:#1fa851; --green-dd:#15823f; --green-l:#e8faef; --green-l2:#cdf2da;
   --ink:#16261c; --body:#37474a; --muted:#6b7c80;
   --white:#ffffff; --bg-soft:#f6fbf7; --line:rgba(22,166,74,.16);
   --shadow:0 18px 50px rgba(22,166,74,.10); --shadow-sm:0 8px 26px rgba(20,40,28,.08);
@@ -44,19 +44,19 @@ h1,h2,h3{color:var(--ink);line-height:1.18;font-weight:900;letter-spacing:-.4px}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
 
 /* ---------- LOGO ---------- */
-.logo{display:inline-flex;align-items:center;gap:11px}
-.logo svg{width:40px;height:40px;flex-shrink:0}
-.logo .lt{line-height:1}
-.logo .lt b{display:block;font-weight:900;font-size:20px;color:var(--ink);letter-spacing:.5px}
-.logo .lt span{display:block;font-weight:700;font-size:10.5px;color:var(--green);letter-spacing:3.4px}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo svg.mark{width:44px;height:44px;flex-shrink:0;color:var(--green)}
+.logo .lt{line-height:1.05}
+.logo .lt b{display:block;font-weight:900;font-size:21px;color:var(--green-dd);letter-spacing:.5px}
+.logo .lt span{display:block;font-weight:700;font-size:11px;color:var(--green-d);letter-spacing:3.2px}
 
 /* ---------- NAV ---------- */
 nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(255,255,255,.88);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1180px;margin:0 auto}
 .nav-tag{font-size:14px;font-weight:500;color:var(--body)}
-.nav-cta{background:var(--green);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;
-  border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 20px rgba(34,166,74,.28)}
+.nav-cta{background:var(--green-d);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;
+  border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 20px rgba(31,168,81,.28)}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(34,166,74,.38)}
 @media(max-width:760px){.nav-tag{display:none}}
 
@@ -64,8 +64,8 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(255,255,255,.88
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);
   font-weight:700;font-size:16px;padding:15px 32px;border-radius:999px;cursor:pointer;border:none;
   transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
-.btn-pri{background:var(--green);color:#fff;box-shadow:0 12px 28px rgba(34,166,74,.32)}
-.btn-pri:hover{transform:translateY(-3px);background:var(--green-d);box-shadow:0 16px 34px rgba(34,166,74,.42)}
+.btn-pri{background:var(--green-d);color:#fff;box-shadow:0 12px 28px rgba(31,168,81,.32)}
+.btn-pri:hover{transform:translateY(-3px);background:var(--green-dd);box-shadow:0 16px 34px rgba(31,168,81,.42)}
 .btn-out{background:#fff;color:var(--green-dd);border:2px solid var(--green-l2)}
 .btn-out:hover{border-color:var(--green);background:var(--green-l)}
 .btn-wa{background:#1faf5a;color:#fff}
@@ -190,7 +190,9 @@ nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(255,255,255,.88
 /* ---------- FOOTER ---------- */
 footer{background:#0f1c14;color:#cfe0d5;padding:54px 0 28px}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:38px;align-items:start}
+footer .logo svg.mark{color:#fff}
 footer .logo .lt b{color:#fff}
+footer .logo .lt span{color:rgba(255,255,255,.78)}
 footer .fdesc{margin-top:16px;font-size:14.5px;color:#9fb6a8;max-width:320px}
 footer h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;letter-spacing:.3px}
 footer .fcontact{display:grid;gap:12px;font-size:14.5px}
@@ -243,11 +245,11 @@ footer .flinks a:hover{color:#fff}
 <nav>
   <div class="nav-in">
     <a href="#top" class="logo" aria-label="NRI Consulting">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="44" fill="none" stroke="#22a64a" stroke-width="7"/>
-        <path d="M50 50 L50 6 A44 44 0 0 1 94 50 Z" fill="#22a64a"/>
-        <path d="M50 50 L50 94 A44 44 0 0 1 6 50 Z" fill="#22a64a"/>
-        <circle cx="50" cy="50" r="7" fill="#fff"/>
+      <svg class="mark" viewBox="0 0 200 200" aria-hidden="true">
+        <path d="M92 10 L92 84 Q92 92 84 92 L10 92 A82 82 0 0 1 92 10 Z" fill="currentColor"/>
+        <path d="M108 10 L108 84 Q108 92 116 92 L190 92 A82 82 0 0 0 108 10 Z" fill="currentColor"/>
+        <path d="M92 190 L92 116 Q92 108 84 108 L10 108 A82 82 0 0 0 92 190 Z" fill="currentColor"/>
+        <path d="M100 190 A90 90 0 0 1 190 100 Q116 116 100 190 Z" fill="currentColor"/>
       </svg>
       <span class="lt"><b>NRI</b><span>CONSULTING</span></span>
     </a>
@@ -452,11 +454,11 @@ footer .flinks a:hover{color:#fff}
     <div class="foot-grid">
       <div>
         <a href="#top" class="logo" aria-label="NRI Consulting">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="44" fill="none" stroke="#22a64a" stroke-width="7"/>
-            <path d="M50 50 L50 6 A44 44 0 0 1 94 50 Z" fill="#22a64a"/>
-            <path d="M50 50 L50 94 A44 44 0 0 1 6 50 Z" fill="#22a64a"/>
-            <circle cx="50" cy="50" r="7" fill="#0f1c14"/>
+          <svg class="mark" viewBox="0 0 200 200" aria-hidden="true">
+            <path d="M92 10 L92 84 Q92 92 84 92 L10 92 A82 82 0 0 1 92 10 Z" fill="currentColor"/>
+            <path d="M108 10 L108 84 Q108 92 116 92 L190 92 A82 82 0 0 0 108 10 Z" fill="currentColor"/>
+            <path d="M92 190 L92 116 Q92 108 84 108 L10 108 A82 82 0 0 0 92 190 Z" fill="currentColor"/>
+            <path d="M100 190 A90 90 0 0 1 190 100 Q116 116 100 190 Z" fill="currentColor"/>
           </svg>
           <span class="lt"><b>NRI</b><span>CONSULTING</span></span>
         </a>
