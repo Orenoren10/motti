@@ -204,7 +204,7 @@ nav.solid{background:rgba(17,34,29,.85);backdrop-filter:blur(14px);border-bottom
 
 /* ---------- INSTAGRAM EMBEDS ---------- */
 .igembeds{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;max-width:1040px;margin:0 auto}
-.igembeds .instagram-media{min-width:0!important;margin:0!important;width:100%!important}
+.igembeds .instagram-media{min-width:0!important;margin:0!important;width:100%!important;min-height:440px}
 .igembeds .ig-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
   text-align:center;padding:30px 22px;border-radius:16px;border:1px solid var(--line2);
   background:linear-gradient(150deg,rgba(58,209,122,.16),var(--surface2));min-height:200px}
@@ -495,7 +495,7 @@ footer .flinks a:hover{color:var(--green)}
 <!-- ===== FINAL CTA + FORM ===== -->
 <section class="sec final" id="form">
   <div class="wrap final-grid">
-    <div class="reveal">
+    <div>
       <span class="eyebrow"><span class="dot"></span> הפרק הבא הוא שלך</span>
       <h2 style="margin-top:16px">הגיע הזמן<br>להשקיע <span class="grn">בעצמך</span>.</h2>
       <p class="invest">בפגישת אימון ראשונה של שעה - <b>ללא כל עלות וללא התחייבות מצידך</b> - נעצור רגע, נבין מה באמת חשוב לך, ותצא עם בהירות וצעד ראשון.</p>
@@ -511,7 +511,7 @@ footer .flinks a:hover{color:var(--green)}
       </a>
     </div>
 
-    <div class="form-card reveal" id="formCard">
+    <div class="form-card" id="formCard">
       <h3>השאר פרטים ונחזור אליך</h3>
       <p class="sub">מלא את הטופס ובחר את מסלול האימון שמתאים לך - נחזור אליך בהקדם.</p>
       <form id="leadForm" action="https://formspree.io/f/xjgdooga" method="POST">
@@ -595,6 +595,9 @@ footer .flinks a:hover{color:var(--green)}
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// placeholder links (#) shouldn't jump to top
+document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
 
 // nav solid on scroll
 var nav = document.getElementById('nav');
