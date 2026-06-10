@@ -25,9 +25,9 @@
   --sans:'Heebo',system-ui,-apple-system,sans-serif; --script:'Dancing Script',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:right;position:relative}
+  -webkit-font-smoothing:antialiased;overflow-x:clip;text-align:right;position:relative}
 /* ambient glows + grain */
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
   background:radial-gradient(720px 520px at 88% -5%,rgba(58,209,122,.16),transparent 60%),
