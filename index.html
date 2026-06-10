@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QMark — נרי ייעוץ ואימון | It's Time For A Change</title>
+<meta name="description" content="QMark של נרי ייעוץ ואימון — שיטת מדידה בינלאומית פורצת דרך למדידת 49 איכויות, אבחון מדויק של שביעות הרצון בתחומי החיים, ותוכנית פעולה לשיפור. פגישת אבחון ראשונה ללא עלות.">
+<meta name="author" content="NRI Consulting / נרי ייעוץ ואימון">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#22a64a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="NRI Consulting — QMark">
+<meta property="og:title" content="QMark — השינוי מתחיל מבפנים">
+<meta property="og:description" content="פגישת אבחון QMark ללא עלות — תמונת מצב מדויקת של שביעות הרצון שלך, ותוכנית פעולה לשיפור.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='none' stroke='%2322a64a' stroke-width='8'/><path d='M50 50 L50 4 A46 46 0 0 1 96 50 Z' fill='%2322a64a'/><path d='M50 50 L50 96 A46 46 0 0 1 4 50 Z' fill='%2322a64a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#22a64a; --green-d:#1c8a3e; --green-dd:#15662f; --green-l:#eafaef; --green-l2:#d6f3e0;
+  --ink:#16261c; --body:#37474a; --muted:#6b7c80;
+  --white:#ffffff; --bg-soft:#f6fbf7; --line:rgba(22,166,74,.16);
+  --shadow:0 18px 50px rgba(22,166,74,.10); --shadow-sm:0 8px 26px rgba(20,40,28,.08);
+  --sans:'Heebo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --script:'Dancing Script',cursive;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--body);line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:right}
+section{scroll-margin-top:84px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{color:var(--ink);line-height:1.18;font-weight:900;letter-spacing:-.4px}
+.green{color:var(--green)}
+.script{font-family:var(--script);font-weight:700}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+
+/* ---------- LOGO ---------- */
+.logo{display:inline-flex;align-items:center;gap:11px}
+.logo svg{width:40px;height:40px;flex-shrink:0}
+.logo .lt{line-height:1}
+.logo .lt b{display:block;font-weight:900;font-size:20px;color:var(--ink);letter-spacing:.5px}
+.logo .lt span{display:block;font-weight:700;font-size:10.5px;color:var(--green);letter-spacing:3.4px}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(255,255,255,.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1180px;margin:0 auto}
+.nav-tag{font-size:14px;font-weight:500;color:var(--body)}
+.nav-cta{background:var(--green);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;
+  border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 20px rgba(34,166,74,.28)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(34,166,74,.38)}
+@media(max-width:760px){.nav-tag{display:none}}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);
+  font-weight:700;font-size:16px;padding:15px 32px;border-radius:999px;cursor:pointer;border:none;
+  transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
+.btn-pri{background:var(--green);color:#fff;box-shadow:0 12px 28px rgba(34,166,74,.32)}
+.btn-pri:hover{transform:translateY(-3px);background:var(--green-d);box-shadow:0 16px 34px rgba(34,166,74,.42)}
+.btn-out{background:#fff;color:var(--green-dd);border:2px solid var(--green-l2)}
+.btn-out:hover{border-color:var(--green);background:var(--green-l)}
+.btn-wa{background:#1faf5a;color:#fff}
+.btn-wa:hover{background:#178f49;transform:translateY(-2px)}
+.btn svg{width:19px;height:19px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden;background:
+  radial-gradient(1100px 520px at 90% -10%,var(--green-l) 0,rgba(234,250,239,0) 60%),var(--white)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:13px;color:var(--green-d);
+  background:var(--green-l);border:1px solid var(--line);padding:7px 16px;border-radius:999px;margin-bottom:22px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(34,166,74,.18)}
+.hero h1{font-size:clamp(34px,5.2vw,58px);margin-bottom:14px}
+.hero .scriptline{font-family:var(--script);font-weight:700;font-size:clamp(30px,4.4vw,46px);color:var(--green);
+  margin-bottom:24px;display:block;direction:ltr}
+.hero p.lede{font-size:18.5px;color:var(--body);max-width:520px;margin-bottom:32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.socials{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.socials .lab{font-weight:700;font-size:14px;color:var(--muted)}
+.soc{width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .2s,background .2s;color:var(--green-dd)}
+.soc:hover{transform:translateY(-3px) scale(1.05);background:var(--green-l)}
+.soc svg{width:20px;height:20px}
+.hero-art{position:relative}
+.hero-art .frame{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);
+  aspect-ratio:4/5;background:linear-gradient(140deg,var(--green) 0,var(--green-dd) 100%)}
+.hero-art .frame img{width:100%;height:100%;object-fit:cover}
+.hero-art .badge{position:absolute;bottom:-22px;right:-14px;background:#fff;border-radius:18px;
+  box-shadow:var(--shadow);padding:16px 22px;display:flex;align-items:center;gap:14px;border:1px solid var(--line)}
+.hero-art .badge .num{font-size:34px;font-weight:900;color:var(--green);line-height:1}
+.hero-art .badge .txt{font-size:13px;font-weight:700;color:var(--ink);line-height:1.4}
+
+/* ---------- SECTION SHELL ---------- */
+.sec{padding:88px 0}
+.sec.alt{background:var(--bg-soft)}
+.sec-head{max-width:720px;margin:0 auto 56px;text-align:center}
+.sec-head .eyebrow{margin-bottom:16px}
+.sec-head h2{font-size:clamp(28px,4vw,42px)}
+.sec-head p{font-size:18px;color:var(--body);margin-top:14px}
+
+/* ---------- INTRO SPLIT ---------- */
+.split{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
+.split .ph{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;
+  background:linear-gradient(160deg,#bfe9cb,#8fd8a6)}
+.split .ph img{width:100%;height:100%;object-fit:cover}
+.split h2{font-size:clamp(28px,3.8vw,40px);margin-bottom:6px}
+.split h2 .s2{display:block;color:var(--green);font-size:.78em;margin-top:6px}
+.split p{margin-top:18px;font-size:17px}
+.split p .hl{color:var(--green-dd);font-weight:700}
+.getbox{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 28px;box-shadow:var(--shadow-sm)}
+.getbox h3{font-size:21px;margin-bottom:16px;color:var(--green-dd)}
+.getlist{list-style:none;display:grid;gap:14px}
+.getlist li{display:flex;gap:13px;align-items:flex-start;font-size:16px;color:var(--body)}
+.getlist li .ck{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--green-l);
+  display:inline-flex;align-items:center;justify-content:center;margin-top:2px}
+.getlist li .ck svg{width:15px;height:15px;color:var(--green)}
+.getlist li b{color:var(--ink)}
+.getlist li .free{color:var(--green);font-weight:900}
+
+/* ---------- STEPS ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;
+  box-shadow:var(--shadow-sm);position:relative}
+.step .n{position:absolute;top:-18px;inset-inline-start:26px;width:42px;height:42px;border-radius:13px;
+  background:var(--green);color:#fff;font-weight:900;font-size:19px;display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 18px rgba(34,166,74,.35)}
+.step h3{font-size:19px;margin:14px 0 8px}
+.step p{font-size:15.5px;color:var(--body)}
+
+/* ---------- CARDS ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.card .pic{height:200px;background:linear-gradient(150deg,#bfe9cb,#7fd29a);overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .pic img{transform:scale(1.06)}
+.card .cbody{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card .tag{font-size:13px;font-weight:700;color:var(--green);display:inline-flex;align-items:center;gap:7px}
+.card h3{font-size:22px}
+.card p{font-size:15.5px;color:var(--body);flex:1}
+.card .go{display:inline-flex;align-items:center;gap:7px;font-weight:800;color:var(--green-d);font-size:15px;margin-top:6px}
+.card .go svg{width:17px;height:17px;transition:transform .2s}
+.card:hover .go svg{transform:translateX(-4px)}
+
+/* ---------- FINAL CTA + FORM ---------- */
+.final{background:linear-gradient(160deg,var(--green-dd) 0,var(--green) 100%);color:#fff;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;opacity:.12;
+  background-image:radial-gradient(circle at 20% 20%,#fff 0,transparent 7%),radial-gradient(circle at 80% 60%,#fff 0,transparent 6%);
+  background-size:120px 120px}
+.final .wrap{position:relative}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.final h2{color:#fff;font-size:clamp(30px,4.2vw,44px)}
+.final .invest{font-size:19px;color:rgba(255,255,255,.92);margin-top:18px;max-width:480px}
+.final .invest b{color:#fff;font-weight:800}
+.trust{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.trust .t{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:#fff}
+.trust .t svg{width:22px;height:22px}
+.form-card{background:#fff;border-radius:24px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.22);color:var(--body)}
+.form-card h3{font-size:22px;margin-bottom:6px}
+.form-card .sub{font-size:14.5px;color:var(--muted);margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:15.5px;color:var(--ink);
+  padding:13px 15px;border:1.5px solid #e1ece4;border-radius:12px;background:#fafdfb;transition:border .2s,box-shadow .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);
+  box-shadow:0 0 0 4px rgba(34,166,74,.13)}
+.field textarea{resize:vertical;min-height:74px}
+.form-actions{display:grid;gap:11px;margin-top:6px}
+.alt-actions{display:flex;gap:11px}
+.alt-actions .btn{flex:1;padding:13px 14px;font-size:14.5px}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6}
+.form-msg{display:none;text-align:center;padding:30px 10px}
+.form-msg svg{width:56px;height:56px;color:var(--green);margin:0 auto 14px}
+.form-msg h3{font-size:24px;margin-bottom:8px}
+.form-msg p{font-size:16px;color:var(--body)}
+.form-card.sent form{display:none}
+.form-card.sent .form-msg{display:block}
+
+/* ---------- FOOTER ---------- */
+footer{background:#0f1c14;color:#cfe0d5;padding:54px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:38px;align-items:start}
+footer .logo .lt b{color:#fff}
+footer .fdesc{margin-top:16px;font-size:14.5px;color:#9fb6a8;max-width:320px}
+footer h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;letter-spacing:.3px}
+footer .fcontact{display:grid;gap:12px;font-size:14.5px}
+footer .fcontact a,footer .fcontact span{display:flex;align-items:center;gap:10px;color:#cfe0d5}
+footer .fcontact a:hover{color:var(--green)}
+footer .fcontact svg{width:17px;height:17px;color:var(--green);flex-shrink:0}
+footer .flinks{display:grid;gap:10px;font-size:14.5px}
+footer .flinks a:hover{color:#fff}
+.foot-soc{display:flex;gap:12px;margin-top:18px}
+.foot-soc a{width:38px;height:38px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.07);color:#cfe0d5;transition:background .2s,color .2s}
+.foot-soc a:hover{background:var(--green);color:#fff}
+.foot-soc svg{width:18px;height:18px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#8aa394}
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.wa-float{position:fixed;bottom:24px;inset-inline-start:24px;z-index:900;width:60px;height:60px;border-radius:50%;
+  background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(37,211,102,.5);
+  transition:transform .2s;animation:waPulse 2.4s infinite}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;color:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 12px 30px rgba(37,211,102,.5)}50%{box-shadow:0 12px 30px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,0)}}
+
+/* ---------- REVEAL ANIMATION ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.wa-float{animation:none}}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .hero-grid,.split,.final-grid{grid-template-columns:1fr;gap:40px}
+  .hero-art{max-width:440px;margin:0 auto}
+  .split .order-img{order:2}
+  .steps,.cards{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:560px){
+  .hero{padding:124px 0 70px}
+  .sec{padding:64px 0}
+  .form-card{padding:24px}
+  .alt-actions{flex-direction:column}
+  .foot-bottom{flex-direction:column;text-align:center;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="logo" aria-label="NRI Consulting">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#22a64a" stroke-width="7"/>
+        <path d="M50 50 L50 6 A44 44 0 0 1 94 50 Z" fill="#22a64a"/>
+        <path d="M50 50 L50 94 A44 44 0 0 1 6 50 Z" fill="#22a64a"/>
+        <circle cx="50" cy="50" r="7" fill="#fff"/>
+      </svg>
+      <span class="lt"><b>NRI</b><span>CONSULTING</span></span>
+    </a>
+    <span class="nav-tag">נרי ייעוץ ואימון · ליווי תהליכים ומשא ומתן</span>
+    <a href="#form" class="nav-cta">קביעת פגישה</a>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><span class="dot"></span> פגישת אבחון ראשונה ללא עלות</span>
+      <h1>השינוי מתחיל מבפנים,<br><span class="green">עכשיו זה הזמן להתחיל</span></h1>
+      <span class="scriptline">It's Time For A Change</span>
+      <p class="lede">QMark — שיטת מדידה בינלאומית פורצת דרך שמראה לך בדיוק היכן אתה היום בתחומי החיים, ומה כדאי לעשות כדי לשפר. בלי התחייבות, בלי עלות.</p>
+      <div class="hero-cta">
+        <a href="#form" class="btn btn-pri">השאירו פרטים ונחזור אליכם
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </a>
+        <a href="#about" class="btn btn-out">איך זה עובד?</a>
+      </div>
+      <div class="socials">
+        <span class="lab">עקבו אחרינו:</span>
+        <a class="soc" href="https://www.facebook.com/people/%D7%A0%D7%A8%D7%99-%D7%99%D7%A2%D7%95%D7%A5-%D7%95%D7%90%D7%99%D7%9E%D7%95%D7%9F-NRI-Consulting/61573942111801/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.3 0-1.3-.1-2.45-.1-2.42 0-4.05 1.48-4.05 4.2v2.2H7.8V14h2.7v8z"/></svg>
+        </a>
+        <a class="soc" href="https://www.instagram.com/nri.consulting/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="soc" href="https://il.linkedin.com/company/nri-consulting-ltd" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v9H4v-9zM5.25 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 8.5h2.4v1.25h.05c.34-.6 1.17-1.25 2.4-1.25 2.57 0 3.05 1.6 3.05 3.7v4.8H16.5v-4.25c0-1-.02-2.3-1.45-2.3-1.45 0-1.67 1.1-1.67 2.23v4.32H11V8.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1546484959-f9a381d1330d?auto=format&fit=crop&w=900&q=80" alt="חץ פוגע במרכז המטרה — דיוק ומיקוד" loading="eager" onerror="this.style.display='none'">
+      </div>
+      <div class="badge">
+        <span class="num">49</span>
+        <span class="txt">איכויות נמדדות<br>בשיטת QMark</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ABOUT / INTRO ===== -->
+<section class="sec" id="about">
+  <div class="wrap split">
+    <div class="ph order-img reveal">
+      <img src="https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?auto=format&fit=crop&w=800&q=80" alt="אדם עוצר רגע על רקע הרים ונוף פתוח" loading="lazy" onerror="this.style.display='none'">
+    </div>
+    <div class="reveal">
+      <h2>מתי בפעם האחרונה<span class="s2">עצרת רגע את מרוץ החיים?</span></h2>
+      <p>אני מזמין אתכם למפגש <span class="hl">QMark</span> — שבסיומו תקבלו תמונת מצב מדויקת של שביעות הרצון שלכם בתחומי החיים, והכי חשוב: מה כדאי לעשות כדי לשפר אותם.</p>
+      <p>QMark היא שיטת מדידה בינלאומית חדשנית ופורצת דרך, המאפשרת לכל אדם ולכל ארגון לנתח באופן מדויק את איכות התנהלותו ואת שביעות רצונו מתוצאותיו.</p>
+      <p>השיטה, באמצעות מדידת <span class="hl">49 איכויות</span> מדויקות ואמינות, מאפשרת קבלת ציון שמשקף את המצב הקיים — וחשוב מכל: פתרונות מדויקים לשיפור הציון לאורך זמן.</p>
+
+      <div class="getbox">
+        <h3>אז מה מקבלים?</h3>
+        <ul class="getlist">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>פגישת אבחון QMark לפי בחירתכם — <span class="free">ללא עלות!</span></span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>דו"ח שממקד אתכם בנושאים שאתם זיהיתם (על סמך השאלון) ככאלה שדורשים שיפור.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>תוכנית פעולה כיצד לשפר את התחום שבחרתם לשפר בחיים שלכם.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span> פשוט ומהיר</span>
+      <h2>אז מה עושים כדי לקבל את ההטבה?</h2>
+      <p>שני צעדים קטנים שמתחילים שינוי גדול.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="n">1</span><h3>משאירים פרטים</h3><p>ממלאים את הטופס כאן באתר ובוחרים את השאלון שמתאים לכם — כלכלי, עסקי או אישי.</p></div>
+      <div class="step reveal"><span class="n">2</span><h3>אנחנו יוצרים קשר</h3><p>נחזור אליכם לתיאום פגישת אבחון של שעה, שבה תקבלו ערך אמיתי עבורכם.</p></div>
+      <div class="step reveal"><span class="n">3</span><h3>מקבלים תמונת מצב</h3><p>בסיום תצאו עם דו"ח אישי ותוכנית פעולה ברורה לשיפור התחום שבחרתם.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CARDS ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span> בחרו את השאלון שלכם</span>
+      <h2>שלושה תחומים, מדידה אחת מדויקת</h2>
+      <p>איזה תחום בחיים שלכם הכי דורש תשומת לב עכשיו?</p>
+    </div>
+    <div class="cards">
+      <a class="card reveal" href="https://tinyurl.com/qmarknriconsulting" target="_blank" rel="noopener">
+        <div class="pic"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80" alt="התנהלות כלכלית — חישוב הוצאות ותקציב" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="cbody">
+          <span class="tag">QMark · כלכלי</span>
+          <h3>התנהלות כלכלית</h3>
+          <p>בהתחשב ביוקר המחיה המאתגר — מה הדירוג להתנהלות הכלכלית שלך?</p>
+          <span class="go">למילוי השאלון <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://tinyurl.com/qmarknriconsulting" target="_blank" rel="noopener">
+        <div class="pic"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80" alt="התנהלות עסקית — פגישת עבודה וניתוח נתונים" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="cbody">
+          <span class="tag">QMark · עסקי</span>
+          <h3>התנהלות עסקית</h3>
+          <p>בזירה העסקית המאתגרת — מה הדירוג להתנהלות העסקית שלך?</p>
+          <span class="go">למילוי השאלון <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://tinyurl.com/qmarknriconsulting" target="_blank" rel="noopener">
+        <div class="pic"><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=700&q=80" alt="איכות חיים אישית — ריצה ופעילות בטבע" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="cbody">
+          <span class="tag">QMark · אישי</span>
+          <h3>איכות חיים אישית</h3>
+          <p>במרוץ החיים המטורף — מה הדירוג לאיכות החיים שלך?</p>
+          <span class="go">למילוי השאלון <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA + FORM ===== -->
+<section class="sec final" id="form">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="reveal">
+        <h2>הגיע הזמן להשקיע בעצמך!</h2>
+        <p class="invest">בפגישה של שעה — <b>ללא כל עלות וללא התחייבות מצידכם</b> — תצאו עם החלטה אחת: האם אני רוצה לשנות משהו בחיים שלי?</p>
+        <p class="invest">זה הזמן שלך להחליט לטובת עצמך. אנחנו כאן רק כדי לכוון ולעזור.</p>
+        <div class="trust">
+          <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> ללא עלות</span>
+          <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> ללא התחייבות</span>
+          <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> פגישה של שעה</span>
+        </div>
+      </div>
+
+      <div class="form-card reveal" id="formCard">
+        <h3>השאירו פרטים ונחזור אליכם</h3>
+        <p class="sub">מלאו את הטופס ובחרו את השאלון שמתאים לכם — נחזור אליכם בהקדם.</p>
+        <form id="leadForm" action="https://formspree.io/f/xjgdooga" method="POST">
+          <div class="field">
+            <label for="name">שם מלא</label>
+            <input type="text" id="name" name="name" placeholder="השם שלכם" required>
+          </div>
+          <div class="field">
+            <label for="phone">טלפון</label>
+            <input type="tel" id="phone" name="phone" placeholder="050-0000000" required>
+          </div>
+          <div class="field">
+            <label for="email">אימייל</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="topic">איזה שאלון מעניין אתכם?</label>
+            <select id="topic" name="topic">
+              <option value="כלכלי">QMark — התנהלות כלכלית</option>
+              <option value="עסקי">QMark — התנהלות עסקית</option>
+              <option value="אישי">QMark — איכות חיים אישית</option>
+              <option value="לא בטוח/ה">עדיין לא בטוח/ה — אשמח להתייעץ</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">הערה (לא חובה)</label>
+            <textarea id="message" name="message" placeholder="משהו שתרצו שנדע לפני הפגישה?"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-pri" style="width:100%">שליחת הפרטים</button>
+            <div class="alt-actions">
+              <button type="button" class="btn btn-wa" id="waBtn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.4-.53.06-1.2.09-3.5-.86-2.94-1.2-4.8-4.2-4.95-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.4.27-.3.58-.37.78-.37l.56.01c.18.01.42-.07.66.5l.9 2.2c.07.18.12.4 0 .62l-.34.55c-.12.16-.25.32-.1.6.13.27.6 1 1.3 1.62.9.8 1.65 1.05 1.93 1.17.27.13.43.11.6-.07.18-.18.7-.8.88-1.08.18-.27.36-.22.6-.13l2.05.97c.27.13.45.2.5.3.07.13.07.7-.18 1.4z"/></svg>
+                שליחה בוואטסאפ
+              </button>
+              <button type="button" class="btn btn-out" id="mailBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                שליחה במייל
+              </button>
+            </div>
+          </div>
+          <p class="form-note">בשליחת הטופס אתם מאשרים שניצור עמכם קשר. הפרטים נשמרים בדיסקרטיות מלאה.</p>
+        </form>
+        <div class="form-msg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+          <h3>הפרטים נשלחו בהצלחה!</h3>
+          <p>תודה רבה — נחזור אליכם בהקדם לתיאום הפגישה.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo" aria-label="NRI Consulting">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="#22a64a" stroke-width="7"/>
+            <path d="M50 50 L50 6 A44 44 0 0 1 94 50 Z" fill="#22a64a"/>
+            <path d="M50 50 L50 94 A44 44 0 0 1 6 50 Z" fill="#22a64a"/>
+            <circle cx="50" cy="50" r="7" fill="#0f1c14"/>
+          </svg>
+          <span class="lt"><b>NRI</b><span>CONSULTING</span></span>
+        </a>
+        <p class="fdesc">נרי ייעוץ ואימון · ליווי תהליכים ומשא ומתן. השינוי מתחיל מבפנים — ואנחנו כאן כדי לכוון ולעזור.</p>
+        <div class="foot-soc">
+          <a href="https://www.facebook.com/people/%D7%A0%D7%A8%D7%99-%D7%99%D7%A2%D7%95%D7%A5-%D7%95%D7%90%D7%99%D7%9E%D7%95%D7%9F-NRI-Consulting/61573942111801/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.3 0-1.3-.1-2.45-.1-2.42 0-4.05 1.48-4.05 4.2v2.2H7.8V14h2.7v8z"/></svg></a>
+          <a href="https://www.instagram.com/nri.consulting/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://il.linkedin.com/company/nri-consulting-ltd" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v9H4v-9zM5.25 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 8.5h2.4v1.25h.05c.34-.6 1.17-1.25 2.4-1.25 2.57 0 3.05 1.6 3.05 3.7v4.8H16.5v-4.25c0-1-.02-2.3-1.45-2.3-1.45 0-1.67 1.1-1.67 2.23v4.32H11V8.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>יצירת קשר</h4>
+        <div class="fcontact">
+          <a href="tel:+972549796009"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg> נייד: 054-9796009</a>
+          <a href="mailto:nri.consult.isr@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> nri.consult.isr@gmail.com</a>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> גרניט 6, פתח תקווה</span>
+        </div>
+      </div>
+      <div>
+        <h4>מידע</h4>
+        <div class="flinks">
+          <a href="#about">אודות QMark</a>
+          <a href="#form">קביעת פגישה</a>
+          <a href="#">תנאים ותמיכה</a>
+          <a href="#">מדיניות פרטיות</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> נרי ייעוץ ואימון — NRI Consulting. כל הזכויות שמורות.</span>
+      <span>השינוי מתחיל מבפנים · It's Time For A Change</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a class="wa-float" href="https://wa.me/972549796009?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20QMark" target="_blank" rel="noopener" aria-label="שלחו לנו וואטסאפ">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.4-.53.06-1.2.09-3.5-.86-2.94-1.2-4.8-4.2-4.95-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.4.27-.3.58-.37.78-.37l.56.01c.18.01.42-.07.66.5l.9 2.2c.07.18.12.4 0 .62l-.34.55c-.12.16-.25.32-.1.6.13.27.6 1 1.3 1.62.9.8 1.65 1.05 1.93 1.17.27.13.43.11.6-.07.18-.18.7-.8.88-1.08.18-.27.36-.22.6-.13l2.05.97c.27.13.45.2.5.3.07.13.07.7-.18 1.4z"/></svg>
+</a>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ---- Scroll reveal ----
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} });
+  },{threshold:0.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+// ---- Form helpers ----
+var WA_NUMBER = '972549796009';
+var MAIL_TO = 'nri.consult.isr@gmail.com';
+var form = document.getElementById('leadForm');
+var card = document.getElementById('formCard');
+
+function vals(){
+  return {
+    name: (document.getElementById('name').value || '').trim(),
+    phone: (document.getElementById('phone').value || '').trim(),
+    email: (document.getElementById('email').value || '').trim(),
+    topic: document.getElementById('topic').value,
+    message: (document.getElementById('message').value || '').trim()
+  };
+}
+function composeText(v){
+  var l = ['בקשה לפגישת אבחון QMark', '',
+    'שם: ' + (v.name || '—'),
+    'טלפון: ' + (v.phone || '—'),
+    'אימייל: ' + (v.email || '—'),
+    'שאלון: ' + v.topic];
+  if(v.message) l.push('הערה: ' + v.message);
+  return l.join('\n');
+}
+
+// WhatsApp submit
+document.getElementById('waBtn').addEventListener('click', function(){
+  var v = vals();
+  if(!v.name || !v.phone){ alert('נא למלא שם וטלפון לפני השליחה'); return; }
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(composeText(v)), '_blank');
+});
+
+// Email submit
+document.getElementById('mailBtn').addEventListener('click', function(){
+  var v = vals();
+  if(!v.name || !v.phone){ alert('נא למלא שם וטלפון לפני השליחה'); return; }
+  var subj = 'בקשה לפגישת QMark — ' + (v.name || '');
+  window.location.href = 'mailto:' + MAIL_TO + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(composeText(v));
+});
+
+// Formspree submit (AJAX, stay on page)
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var data = new FormData(form);
+  fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} })
+    .then(function(r){
+      if(r.ok){ card.classList.add('sent'); card.scrollIntoView({behavior:'smooth',block:'center'}); }
+      else { return r.json().then(function(d){ throw new Error((d && d.error) || 'error'); }); }
+    })
+    .catch(function(){ alert('אירעה תקלה בשליחה. נסו שוב, או שלחו בוואטסאפ / במייל.'); });
+});
+</script>
+</body>
+</html>
